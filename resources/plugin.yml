@@ -1,4 +1,0 @@
-name: Auto_message
-version: '${version}'
-main: marumasa.auto_message.Minecraft
-api-version: 1.16
