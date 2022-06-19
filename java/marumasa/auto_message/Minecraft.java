@@ -9,7 +9,7 @@ public final class Minecraft extends JavaPlugin {
         Config config = new Config(this);
         getLogger().info(String.valueOf(config.Messages));
         getLogger().info(String.valueOf(config.tick));
-        new SendMessage(config).runTaskTimer(this, 0L, config.tick);
+        new SendMessage(config).runTaskTimer(this, config.tick, config.tick);
     }
 
     @Override
