@@ -7,15 +7,16 @@ import java.util.List;
 import java.util.Random;
 
 public class SendMessage extends BukkitRunnable {
-    private final Config config;
+
+    final List<String> Messages;
 
     public SendMessage(Config data) {
-        config = data;
+        Messages = data.Messages;
+
     }
 
     @Override
     public void run() {
-        final List<String> Messages = config.Messages;
         final int RANDOM = new Random().nextInt(Messages.size());
         final String Message = Messages.get(RANDOM);
         Bukkit.broadcastMessage(Message);

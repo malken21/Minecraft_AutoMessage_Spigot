@@ -8,20 +8,16 @@ import java.util.List;
 import java.util.Random;
 
 public class AllSendMessage extends BukkitRunnable {
-    private final Config config;
 
-    private List<String> MessageData = null;
+    private List<String> MessageData;
     private List<String> MessageRemove = new ArrayList<>();
 
     public AllSendMessage(Config data) {
-        config = data;
+        MessageData = data.Messages;
     }
 
     @Override
     public void run() {
-        if (MessageData == null) {
-            MessageData = config.Messages;
-        }
         if (MessageData.isEmpty()) {
             MessageData = MessageRemove;
             MessageRemove = new ArrayList<>();
